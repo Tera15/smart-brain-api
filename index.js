@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
+const port = process.env.PORT || 3001;
     
 
    const db = knex({
@@ -107,6 +108,6 @@ app.put('/image', (req, res)=>{
 
 })
 
-app.listen(3000, ()=>{
-    console.log('app is running on port:3000')
+app.listen(port, ()=>{
+    console.log(`app is running on port:${port}`)
 })

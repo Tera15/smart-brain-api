@@ -63,7 +63,7 @@ app.post('/signin', (req, res)=>{
         .returning('email')
         .then(loginEmail => {
             return trx('users')
-            .into('users') // kinex 
+            // .into('users')
             .returning('*')
             .insert({
                 email: loginEmail[0],

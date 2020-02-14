@@ -22,7 +22,7 @@ const port = process.env.PORT || 3001;
 
 //initializing express
 const app = express();
-app.use(cors())
+app.use(cors()) 
 //initializing bodyParser middleware
 app.use(bodyParser.json());
 
@@ -76,7 +76,7 @@ app.post('/signin', (req, res)=>{
             .then(trx.commit)
             .catch(trx.rollback)
         })
-        .catch( err => res.status(400).json('unable to register'))
+        .catch( err => res.status(400).json(err, 'unable to register'))
     }) 
 })
 

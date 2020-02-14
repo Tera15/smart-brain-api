@@ -22,10 +22,10 @@ const port = process.env.PORT || 3001;
 
 //initializing express
 const app = express();
-
+app.use(cors())
 //initializing bodyParser middleware
 app.use(bodyParser.json());
-app.use(cors())
+
 
 app.get('/', (req,res) => {
     res.send('hi its working'); 
